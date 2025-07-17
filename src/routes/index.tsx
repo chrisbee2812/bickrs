@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import logo from '../logo.svg'
+import '../styles/main.css'
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <>
+    <main>
       <section>
         <div>
           <h2>About Me</h2>
@@ -55,7 +55,7 @@ function App() {
         <div>
           <h2>Projects</h2>
           <div>
-            <a href="sentencegen.html">
+            <a href="#">
             <div>
               <h3>Discworld Random Sentence Generator</h3>
               <p>A Codecademy project to create a random sentence generator.</p>
@@ -65,14 +65,14 @@ function App() {
                 instead of their, himself or herself instead of themself).</p>
             </div>
             </a>
-            <a href="calc.html">
+            <a href="#">
             <div>
               <h3>Calculator</h3>
               <p>A simple calculator.</p>
               <p>This will progress to be a more scientific calculator with some fabulous extras!!!</p>
             </div>
             </a>
-            <a href="veg.html">
+            <a href="#">
             <div>
               <h3>Vegetable Planting Guide for France</h3>
               <p>Spending half my time in France i decided to create a veg calendar for France.</p>
@@ -82,6 +82,6 @@ function App() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   )
 }
