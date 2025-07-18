@@ -1,10 +1,41 @@
 header{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='120' transform='rotate(180)' preserveAspectRatio='none' viewBox='0 0 1440 120'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1014%26quot%3b)' fill='none'%3e%3cpath d='M 0%2c51 C 144%2c43.6 432%2c14.2 720%2c14 C 1008%2c13.8 1296%2c42.8 1440%2c50L1440 120L0 120z' fill='%23184a7e'%3e%3c/path%3e%3cpath d='M 0%2c104 C 96%2c99.2 288%2c81.8 480%2c80 C 672%2c78.2 768%2c97.2 960%2c95 C 1152%2c92.8 1344%2c74.2 1440%2c69L1440 120L0 120z' fill='%232264ab'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1014'%3e%3crect width='1440' height='120' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: sticky;
+    margin: 0;   
+    height: 3rem;
+    background-color: #fff1f2;
+    color: #3f6212;
+    border-bottom: #3f621244 1px solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: fixed;
     top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header nav div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    
+}
+
+header nav div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 3rem;
+}
+
+header div nav ul li a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 600;
 }
