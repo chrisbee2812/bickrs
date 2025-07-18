@@ -1,17 +1,19 @@
-main {
+.hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    height: 100vh;
+   
 }
 
-main h1 {
+.hero h1 {
     font-size: 6rem;
     color: #3f6212;
 }
 
-main h2 {
+.hero h2 {
     font-size: 3rem;
     color: #3f6212;
+    padding-bottom: 10rem;
 }

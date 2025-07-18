@@ -7,9 +7,11 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <main>      
+    <main>
+      <div className="hero">      
         <h1>HI, I'M CHRIS</h1>
         <h2>WebSite Developer</h2>
+      </div>
     </main>
   )
 }
