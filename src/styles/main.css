@@ -1,34 +1,85 @@
 @keyframes span1colours {
     0% {color: #3f6212;}
-    25% {color: #c05300;}
-    50% {color: #f48a2e;}
-    75% {color: #8eb040;}
+    15% {color: #8eb040;}
+    30% {color: #f48a2e;}
+    45% {color: #c05300;}
+    60% {color: #c05300;}
+    75% {color: #f48a2e;}
+    90% {color: #8eb040;}
     100% {color: #3f6212;}
+}
+
+@keyframes span2colours {
+    0% {color: #ff4800;}
+    10% {color: #ff6000;
+        text-shadow: 0 0 4px #ff6000;}
+    20% {color: #ff7900;
+        text-shadow: 0 0 8px #ff7900;}
+    30% {color: #ff9100;
+        text-shadow: 0 0 12px #ff9100;}
+    40% {color: #ffaa00;
+        text-shadow: 0 0 16px #ffaa00;}
+    50% {color: #ffb600;
+        text-shadow: 0 0 20px #ffb600;}
+    60% {color: #ffb600;
+        text-shadow: 0 0 20px #ffb600;}        
+    70% {color: #ffaa00;
+    text-shadow: 0 0 16px #ffaa00;}
+    80% {color: #ff9100;
+        text-shadow: 0 0 12px #ff9100;}
+    90% {color: #ff7900;
+        text-shadow: 0 0 8px #ff7900;}
+    100% {color: #ff6000;
+        text-shadow: 0 0 4px #ff6000;}
 }
 
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    height: 100vh;   
+}
+
+.heroh1 {
+    height: 45%;
+    display: flex;
+    align-items: end;
     justify-content: center;
-    height: 100vh;
-   
+}
+
+.heroh2 {
+    height: 45%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
 }
 
 .hero h1 {
+    margin: 0;
     font-size: 6rem;
     color: #3f6212;
 }
 
 .hero h2 {
+    
     font-size: 3rem;
     color: #3f6212;
-    padding-bottom: 10rem;    
+    margin: 0;    
 }
 
-.hero h2 span1 {
+.hero .span1 {
     animation-name: span1colours;
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
 }
+
+.hero .span2 {
+    animation-name: span2colours;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    font-size: 5rem;
+}
+
+
 

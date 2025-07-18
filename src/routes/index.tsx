@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../styles/main.css'
 
 export const Route = createFileRoute('/')({
@@ -10,11 +10,11 @@ function App() {
 
  
     const texts = [
-      <h2><span className="span1">Website Developer</span></h2>,
-      <h2><span className="span1">Website Designer</span></h2>, 
-      <h2><span className="span1">JavaScript Developer</span></h2>, 
-      <h2><span className="span1">React Developer</span></h2>, 
-      <h2><span className="span1">Father</span></h2>
+      <h2>Website <span className="span1">Developer</span></h2>,
+      <h2>Website <span className="span1">Designer</span></h2>, 
+      <h2>JavaScript <span className="span1">Developer</span></h2>, 
+      <h2>React <span className="span1">Developer</span></h2>, 
+      <h2><span className="span2">Father</span></h2>
     ]
 
     function textSwapper() {
@@ -26,7 +26,7 @@ function App() {
             const nextIndex = (currentIndex + 1) % texts.length;
             return texts[nextIndex];
           });
-        }, 4000); // Change text every 4 seconds
+        }, 3000); // Change text every 4 seconds
         return () => clearInterval(intervalId);
       }, []);
       return currentText;
@@ -34,9 +34,13 @@ function App() {
 
   return (
     <main>
-      <div className="hero">      
-        <h1>HI, I'M CHRIS</h1>
-        {textSwapper()}
+      <div className="hero"> 
+        <div className="heroh1">
+          <h1>HI, I'M CHRIS</h1>
+        </div>
+        <div className="heroh2">
+          {textSwapper()}
+        </div>
       </div>
     </main>
   )
