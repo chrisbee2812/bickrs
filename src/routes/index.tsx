@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import * as path from 'path'
 import '../styles/main.css'
 
 export const Route = createFileRoute('/')({
@@ -33,7 +32,7 @@ function App() {
       return currentText;
     }
 
-    console.log(__dirname)
+    // console.log(__dirname)
 
   return (
     <main>
