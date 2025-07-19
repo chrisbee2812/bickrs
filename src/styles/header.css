@@ -1,11 +1,11 @@
 header{
     margin: 0;   
-    height: 3rem;
+    height: 3em;
     background-color: #fff1f2;
     color: #3f6212;
     border-bottom: #c05300 1px solid;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
     position: fixed;
     top: 0;
     width: 100%;
@@ -16,8 +16,8 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 10em;
+    padding-right: 10em;
     
 }
 
@@ -26,11 +26,13 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 3rem;
+    gap: 3em;
+    padding-top: 0.5em;
 }
 
 .nav-link {
     font-weight: 600;
+    font-size: 1.4rem;
     text-decoration: none;
     color: #3f6212;
 }
@@ -41,3 +43,104 @@ header h1 {
     font-weight: 600;
 }
 
+@media only screen and (max-width: 460px) {
+    header {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        height: auto;
+    }
+    header nav {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    header nav ul {
+        gap: 0.5em;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 461px) and (max-width: 600px) {
+    header {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        height: 2.5em;
+    }
+    
+    header nav {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    header nav ul {
+        gap: 2em;
+        padding-top: 0.5em;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    header {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        height: 3em;
+    }
+    
+    header nav {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    header nav ul {
+        gap: 2em;
+        padding-top: 0.7em;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .nav-link {
+        font-size: 1.0rem;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+    header {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        height: 3em;
+    }
+    
+    header nav {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+
+    header nav ul {
+        gap: 3em;
+        padding-top: 0.8em;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+}

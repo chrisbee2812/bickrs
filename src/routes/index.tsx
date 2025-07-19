@@ -10,10 +10,10 @@ function App() {
 
  
     const texts = [
-      <h2>Website <span className="span1">Developer</span></h2>,
-      <h2>Website <span className="span1">Designer</span></h2>, 
-      <h2>JavaScript <span className="span1">Developer</span></h2>, 
-      <h2>React <span className="span1">Developer</span></h2>, 
+      <h2><span className="span1">Website Developer</span></h2>,
+      <h2><span className="span1">Website Designer</span></h2>, 
+      <h2><span className="span1">JavaScript Developer</span></h2>, 
+      <h2><span className="span1">React Developer</span></h2>, 
       <h2><span className="span2">Father</span></h2>
     ]
 
@@ -26,7 +26,7 @@ function App() {
             const nextIndex = (currentIndex + 1) % texts.length;
             return texts[nextIndex];
           });
-        }, 3000); // Change text every 4 seconds
+        }, 4000); // Change text every 4 seconds
         return () => clearInterval(intervalId);
       }, []);
       return currentText;
@@ -34,12 +34,15 @@ function App() {
 
   return (
     <main>
-      <div className="hero"> 
-        <div className="heroh1">
+      <div className="home"> 
+        <div className="homeh1">
           <h1>HI, I'M CHRIS</h1>
         </div>
-        <div className="heroh2">
+        <div className="homeh2">
           {textSwapper()}
+        </div>
+        <div className="homeh3">
+          <p></p>
         </div>
       </div>
     </main>

@@ -5,7 +5,8 @@ import github from '../images/github.svg'
 
 export default function Footer() {
     return (
-    <footer>        
+    <footer>
+        <p>This web site is currently being developed, more to come soon!</p>        
         <div>
             <a href="mailto:chris@bickrs.com" id="email-link">
                 <img className="icons" src={envelope} alt="Email Icon" />
