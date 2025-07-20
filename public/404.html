@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script>
-      sessionStorage.redirect = window.location.pathname;
-      window.location.replace(window.location.origin);
-    </script>
-  </head>
-  <body>
-    Redirecting...
-  </body>
+<head>
+  <title>Redirecting...</title>
+  <script>
+    sessionStorage.setItem('redirect', window.location.pathname)
+    window.location.href = '/'
+  </script>
+</head>
+<body>
+  Redirecting to homepage...
+</body>
 </html>

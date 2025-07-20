@@ -1,5 +1,5 @@
 {
-  "name": "tanstack-router-app",
+  "name": "tanstack-vite-app",
   "type": "static",
   "static": {
     "publicDir": "dist",
