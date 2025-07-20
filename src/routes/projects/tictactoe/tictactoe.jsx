@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react';
 
 export const Route = createFileRoute('/projects/tictactoe')({
-  component: RouteComponent,
+  component: TicTacToeComponent,
 })
 
 
@@ -62,7 +62,7 @@ function Board({ xIsNext, squares, onPlay }) {
   );
 }
 
-export default function Game() {
+export default function TicTacToeComponent() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const[currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
