@@ -25,17 +25,22 @@
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
   plugins: [
     react(),
-    
+    viteStaticCopy({
+      targets: [
+        {
+          src: '404.html', // Required for client-side routing
+          dest: '.'
+        }
+      ]
+    })
   ],
-  base: './',
-  resolve: {
-    alias: {
-      '~': '/src'
-    }
+  base: './', // Important for IONOS
+  build: {
+    outDir: 'dist'
   }
 })
