@@ -13,7 +13,8 @@ import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProjectsProject1RouteImport } from './routes/projects/project1'
+import { Route as ProjectsTictactoeRouteImport } from './routes/projects/tictactoe'
+import { Route as ProjectsHangmanRouteImport } from './routes/projects/hangman'
 
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
@@ -35,9 +36,14 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsProject1Route = ProjectsProject1RouteImport.update({
-  id: '/project1',
-  path: '/project1',
+const ProjectsTictactoeRoute = ProjectsTictactoeRouteImport.update({
+  id: '/tictactoe',
+  path: '/tictactoe',
+  getParentRoute: () => ProjectsRoute,
+} as any)
+const ProjectsHangmanRoute = ProjectsHangmanRouteImport.update({
+  id: '/hangman',
+  path: '/hangman',
   getParentRoute: () => ProjectsRoute,
 } as any)
 
@@ -46,14 +52,16 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
-  '/projects/project1': typeof ProjectsProject1Route
+  '/projects/hangman': typeof ProjectsHangmanRoute
+  '/projects/tictactoe': typeof ProjectsTictactoeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
-  '/projects/project1': typeof ProjectsProject1Route
+  '/projects/hangman': typeof ProjectsHangmanRoute
+  '/projects/tictactoe': typeof ProjectsTictactoeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,20 +69,34 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
-  '/projects/project1': typeof ProjectsProject1Route
+  '/projects/hangman': typeof ProjectsHangmanRoute
+  '/projects/tictactoe': typeof ProjectsTictactoeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/projects' | '/projects/project1'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/projects/hangman'
+    | '/projects/tictactoe'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/projects' | '/projects/project1'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/projects/hangman'
+    | '/projects/tictactoe'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/projects'
-    | '/projects/project1'
+    | '/projects/hangman'
+    | '/projects/tictactoe'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -114,22 +136,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/project1': {
-      id: '/projects/project1'
-      path: '/project1'
-      fullPath: '/projects/project1'
-      preLoaderRoute: typeof ProjectsProject1RouteImport
+    '/projects/tictactoe': {
+      id: '/projects/tictactoe'
+      path: '/tictactoe'
+      fullPath: '/projects/tictactoe'
+      preLoaderRoute: typeof ProjectsTictactoeRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
+    '/projects/hangman': {
+      id: '/projects/hangman'
+      path: '/hangman'
+      fullPath: '/projects/hangman'
+      preLoaderRoute: typeof ProjectsHangmanRouteImport
       parentRoute: typeof ProjectsRoute
     }
   }
 }
 
 interface ProjectsRouteChildren {
-  ProjectsProject1Route: typeof ProjectsProject1Route
+  ProjectsHangmanRoute: typeof ProjectsHangmanRoute
+  ProjectsTictactoeRoute: typeof ProjectsTictactoeRoute
 }
 
 const ProjectsRouteChildren: ProjectsRouteChildren = {
-  ProjectsProject1Route: ProjectsProject1Route,
+  ProjectsHangmanRoute: ProjectsHangmanRoute,
+  ProjectsTictactoeRoute: ProjectsTictactoeRoute,
 }
 
 const ProjectsRouteWithChildren = ProjectsRoute._addFileChildren(

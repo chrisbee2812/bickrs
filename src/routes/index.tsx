@@ -26,7 +26,7 @@ function App() {
             const nextIndex = (currentIndex + 1) % texts.length;
             return texts[nextIndex];
           });
-        }, 4000); // Change text every 4 seconds
+        }, 2500); // Change text every 4 seconds
         return () => clearInterval(intervalId);
       }, []);
       return currentText;
