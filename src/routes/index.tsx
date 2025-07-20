@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import '../styles/main.css'
+import '../styles/index.css'
 
 export const Route = createFileRoute('/')({
   component: App,

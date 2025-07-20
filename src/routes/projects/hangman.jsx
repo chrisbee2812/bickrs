@@ -1,16 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from "react"
 import { clsx } from "clsx"
-import { languages } from "./hangman/languages"
-import { getFarewellText, getRandomWord } from "./hangman/utils"
+import { languages } from "../../components/hangman/languages"
+import { getFarewellText, getRandomWord } from "../../components/hangman/utils"
 import Confetti from "react-confetti"
-import './hangman/index.css'
+import '../../components/hangman/hangman.css'
 
 export const Route = createFileRoute('/projects/hangman')({
   component: RouteComponent,
 })
 
-export default function RouteComponent() {
+function RouteComponent() {
     // State values
     const [currentWord, setCurrentWord] = useState(() => getRandomWord())
     const [guessedLetters, setGuessedLetters] = useState([])
