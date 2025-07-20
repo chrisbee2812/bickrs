@@ -1,4 +1,10 @@
+import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react';
+
+export const Route = createFileRoute('/projects/tictactoe')({
+  component: RouteComponent,
+})
+
 
 function Square({ value, onSquareClick }) {  
   return (
