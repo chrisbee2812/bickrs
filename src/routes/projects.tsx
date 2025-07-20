@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import '../styles/projects.css'
 
 export const Route = createFileRoute('/projects')({
@@ -6,5 +6,5 @@ export const Route = createFileRoute('/projects')({
 })
 
 function RouteComponent() {
-  return <div className="projects"><h4>COMING SOON!</h4></div>
+  return <div className="projects"><Link to='/tictactoe/tictactoe.js'>Tic Tac Toe</Link></div>
 }
