@@ -16,6 +16,7 @@ const router = createRouter({
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
+  basepath: import.meta.env.BASE_URL // added to try fix client side routing
 })
 
 // Register the router instance for type safety
