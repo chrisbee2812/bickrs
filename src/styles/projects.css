@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
 h4 {
@@ -12,3 +11,16 @@ h4 {
   font-size: 4rem;
   margin: 0;
 }
+
+@media only screen and (max-width: 460px) {
+    .projects h4 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 461px) and (max-width: 600px) {
+    .projects h4 {
+        font-size: 3rem;
+    }
+}
+
