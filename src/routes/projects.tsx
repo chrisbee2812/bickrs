@@ -6,5 +6,5 @@ export const Route = createFileRoute('/projects')({
 })
 
 function RouteComponent() {
-  return <div className="projects"><Link to='/about'>Tic Tac Toe</Link></div>
+  return <div className="projects"><Link to='/projects/tictactoe'>Tic Tac Toe</Link></div>
 }
