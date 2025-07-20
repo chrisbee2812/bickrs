@@ -1,3 +1,5 @@
+import { Link } from '@tanstack/react-router'
+
 import '../styles/header.css'
 
 export default function Header() {
@@ -8,10 +10,10 @@ return (
                 
                     <h1 className="logo">bickrs.com</h1>
                     <ul className="nav-links">
-                        <li><a className="nav-link" href="/">Home</a></li>
-                        <li><a className="nav-link" href="/about">About</a></li>
-                        <li><a className="nav-link" href="/projects">Projects</a></li>
-                        <li><a className="nav-link" href="/contact">Contact</a></li>
+                        <li><Link className="nav-link" to="/">Home</Link></li>
+                        <li><Link className="nav-link" to="/about">About</Link></li>
+                        <li><Link className="nav-link" to="/projects">Projects</Link></li>
+                        <li><Link className="nav-link" to="/contact">Contact</Link></li>
                     </ul>
                 
             </nav>
