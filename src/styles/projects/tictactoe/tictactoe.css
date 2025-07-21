@@ -1,0 +1,33 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.square {
+    margin: 0.125em;
+    height: 3em;
+    width: 3em;
+}
+
+.status {
+    color: #3f6212;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ol li button {
+    height: 2em;
+    margin: 0.125em 0;
+    background-color: #8eb040;
+}

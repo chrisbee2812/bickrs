@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react';
 import { Board } from '../../components/tictactoe/tttutils'
+import '../../styles/projects/tictactoe/tictactoe.css'
 
 export const Route = createFileRoute('/projects/tictactoe')({
   component: RouteComponent,

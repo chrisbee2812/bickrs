@@ -4,7 +4,7 @@ import { clsx } from "clsx"
 import { languages } from "../../components/hangman/languages"
 import { getFarewellText, getRandomWord } from "../../components/hangman/utils"
 import Confetti from "react-confetti"
-import '../../components/hangman/hangman.css'
+import '../../styles/projects/hangman/hangman.css'
 
 export const Route = createFileRoute('/projects/hangman')({
   component: RouteComponent,
@@ -131,7 +131,7 @@ function RouteComponent() {
     }
 
     return (
-        <main>
+        <div className="hangman">
             {
                 isGameWon && 
                     <Confetti
@@ -139,11 +139,11 @@ function RouteComponent() {
                         numberOfPieces={1000}
                     />
             }
-            <header>
+            <div className="head-section">
                 <h1>Assembly: Endgame</h1>
                 <p>Guess the word within 8 attempts to keep the
                 programming world safe from Assembly!</p>
-            </header>
+            </div>
 
             <section
                 aria-live="polite"
@@ -189,6 +189,6 @@ function RouteComponent() {
                     className="new-game"
                     onClick={startNewGame}
                 >New Game</button>}
-        </main>
+        </div>
     )
 }
