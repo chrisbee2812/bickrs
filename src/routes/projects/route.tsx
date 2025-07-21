@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useRouterState } from '@tanstack/react-router'
+import { createFileRoute, Link, useRouterState, Outlet } from '@tanstack/react-router'
 import '../../styles/projects/projects.css'
 
 export const Route = createFileRoute('/projects')({
@@ -11,7 +11,7 @@ function ProjectsComponent() {
   
   return (
     <>
-      
+      {location != './projects' ? <Outlet /> :
       <div className="projects"> 
         <div className="project-section">
           <h2>Games:</h2>
@@ -24,7 +24,7 @@ function ProjectsComponent() {
           <Link className="projects-link" to="/projects/css">CSS</Link>    
         </div> 
         </div>
-      
+       }
     </>
   )}
 
