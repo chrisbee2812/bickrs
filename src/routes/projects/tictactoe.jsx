@@ -43,7 +43,7 @@ function RouteComponent() {
       <section className="aside-note">
         <h2>React Application</h2>
         <p>This game was created whilst working</p>
-        <p>through the react.com's learning path.</p>
+        <p>through the <a href="https://react.com" target="blank"><strong>react.com</strong></a>'s learning path.</p>
         <h2>Still to implement:</h2>
         <ul>
           <li>Game Over status when there is no winner.</li>
