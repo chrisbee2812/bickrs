@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet, useRouterState } from '@tanstack/react-router'
-import '../../styles/projects.css'
+import '../../styles/projects/projects.css'
 
 export const Route = createFileRoute('/projects')({
   component: ProjectsComponent,
@@ -10,13 +10,19 @@ function ProjectsComponent() {
   
   return (
     <>
-      {location === '/projects' ?  
-        <div className="projects">
+      {location === '/projects' ? 
+      <div className="projects"> 
+        <div className="project-section">
+          <h2>Games:</h2>
           <Link className="projects-link" to="/projects/tictactoe">Tic Tac Toe</Link>
           <Link className="projects-link" to="/projects/hangman">Hangman</Link>
+        </div>
+        <div className="project-section">
+          <h2>Reference:</h2>
           <Link className="projects-link" to="/projects/html">HTML</Link>
           <Link className="projects-link" to="/projects/css">CSS</Link>    
-        </div> :
+        </div> 
+      </div> :
         <Outlet />
       }
     </>

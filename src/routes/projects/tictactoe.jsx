@@ -40,12 +40,22 @@ function RouteComponent() {
 
   return (
     <div className="game">
-      <div className="game-board">
+      <section className="aside-note">
+        <h2>React Application</h2>
+        <p>This game was created whilst working</p>
+        <p>through the react.com's learning path.</p>
+        <h2>Still to implement:</h2>
+        <ul>
+          <li>Game Over status when there is no winner.</li>
+          <li>New Game button</li>
+        </ul>
+      </section>
+      <section className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className="game-info">
+      </section>
+      <section className="game-info">
         <ol>{moves}</ol>
-      </div>
+      </section>
     </div>
   );
 }
