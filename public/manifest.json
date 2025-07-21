@@ -3,6 +3,16 @@
   "name": "Chris Bicknell Personal Portfolio",
   "icons":[
     {
+      "src":"../src/images/favicon-16x16.png",
+      "sizes":"16x16",
+      "type":"image/png"
+    },
+    {
+      "src":"../src/images/favicon-32x32.png",
+      "sizes":"32x32",
+      "type":"image/png"
+    },
+    {
       "src":"../src/images/android-chrome-192x192.png",
       "sizes":"192x192",
       "type":"image/png"
