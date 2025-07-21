@@ -7,7 +7,7 @@ export const Route = createFileRoute('/projects')({
 
 function ProjectsComponent() {
   const location = useRouterState({ select: (s) => s.location.pathname })
-  console.log(location)
+  
   
   return (
     <>
