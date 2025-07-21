@@ -10,7 +10,7 @@ function ProjectsComponent() {
   
   return (
     <>
-      {location === '/projects' ? 
+      
       <div className="projects"> 
         <div className="project-section">
           <h2>Games:</h2>
@@ -22,9 +22,10 @@ function ProjectsComponent() {
           <Link className="projects-link" to="/projects/html">HTML</Link>
           <Link className="projects-link" to="/projects/css">CSS</Link>    
         </div> 
-      </div> :
-        <Outlet />
-      }
+        </div>
+      
     </>
-    
-)}
+  )}
+
+
+
