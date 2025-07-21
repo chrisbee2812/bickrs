@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useRouterState, Outlet } from '@tanstack/react-router'
-import '../../styles/projects/projects.css'
+import '../styles/projects.css'
 
 export const Route = createFileRoute('/projects')({
   component: ProjectsComponent,
