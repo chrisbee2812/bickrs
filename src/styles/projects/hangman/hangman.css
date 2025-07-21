@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+.screen-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hangman-info {
+    color: #3f6212;
+}
+
 .hangman {
     margin: 0;
     background-color: #fff1f2;

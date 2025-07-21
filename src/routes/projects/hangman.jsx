@@ -131,64 +131,78 @@ function RouteComponent() {
     }
 
     return (
-        <div className="hangman">
-            {
-                isGameWon && 
-                    <Confetti
-                        recycle={false}
-                        numberOfPieces={1000}
-                    />
-            }
-            <div className="head-section">
-                <h1>Assembly: Endgame</h1>
-                <p>Guess the word within 8 attempts to keep the
-                programming world safe from Assembly!</p>
+        <div className="screen-layout">
+            <div className="hangman-info">
+                <h2>Game Info:</h2>
+                <p>This game was created during the <a href="https://scrimba.com" target="blank"><strong>Scrimba</strong></a></p>
+                <p>front end developer course.</p>
+                <h2>Still to implement:</h2>
+                <p>These are personal desires, not requested on the course!</p>
+                <ul>
+                    <li>re-style to suit this site a bit better</li>
+                    <li>implement a back-end database for the word list</li>
+                    <li>implement a word hint option</li>
+                </ul>
             </div>
+            <div className="hangman">
+                {
+                    isGameWon && 
+                        <Confetti
+                            recycle={false}
+                            numberOfPieces={1000}
+                        />
+                }
+                <div className="head-section">
+                    <h1>Assembly: Endgame</h1>
+                    <p>Guess the word within 8 attempts to keep the
+                    programming world safe from Assembly!</p>
+                </div>
 
-            <section
-                aria-live="polite"
-                role="status"
-                className={gameStatusClass}
-            >
-                {renderGameStatus()}
-            </section>
+                <section
+                    aria-live="polite"
+                    role="status"
+                    className={gameStatusClass}
+                >
+                    {renderGameStatus()}
+                </section>
 
-            <section className="language-chips">
-                {languageElements}
-            </section>
+                <section className="language-chips">
+                    {languageElements}
+                </section>
 
-            <section className="word">
-                {letterElements}
-            </section>
+                <section className="word">
+                    {letterElements}
+                </section>
 
-            {/* Combined visually-hidden aria-live region for status updates */}
-            <section
-                className="sr-only"
-                aria-live="polite"
-                role="status"
-            >
-                <p>
-                    {currentWord.includes(lastGuessedLetter) ?
-                        `Correct! The letter ${lastGuessedLetter} is in the word.` :
-                        `Sorry, the letter ${lastGuessedLetter} is not in the word.`
-                    }
-                    You have {numGuessesLeft} attempts left.
-                </p>
-                <p>Current word: {currentWord.split("").map(letter =>
-                    guessedLetters.includes(letter) ? letter + "." : "blank.")
-                    .join(" ")}</p>
+                {/* Combined visually-hidden aria-live region for status updates */}
+                <section
+                    className="sr-only"
+                    aria-live="polite"
+                    role="status"
+                >
+                    <p>
+                        {currentWord.includes(lastGuessedLetter) ?
+                            `Correct! The letter ${lastGuessedLetter} is in the word.` :
+                            `Sorry, the letter ${lastGuessedLetter} is not in the word.`
+                        }
+                        You have {numGuessesLeft} attempts left.
+                    </p>
+                    <p>Current word: {currentWord.split("").map(letter =>
+                        guessedLetters.includes(letter) ? letter + "." : "blank.")
+                        .join(" ")}</p>
 
-            </section>
+                </section>
 
-            <section className="keyboard">
-                {keyboardElements}
-            </section>
+                <section className="keyboard">
+                    {keyboardElements}
+                </section>
 
-            {isGameOver &&
-                <button
-                    className="new-game"
-                    onClick={startNewGame}
-                >New Game</button>}
+                {isGameOver &&
+                    <button
+                        className="new-game"
+                        onClick={startNewGame}
+                    >New Game</button>}
+            </div>
         </div>
     )
 }

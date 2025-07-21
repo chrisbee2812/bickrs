@@ -48,6 +48,7 @@ function RouteComponent() {
         <ul>
           <li>Game Over status when there is no winner.</li>
           <li>New Game button</li>
+          <li>Adjust game status to show a move later.</li>
         </ul>
       </section>
       <section className="game-board">
