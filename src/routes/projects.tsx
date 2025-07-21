@@ -18,11 +18,11 @@ function ProjectsComponent() {
           <Link className="projects-link" to="/projects/tictactoe">Tic Tac Toe</Link>
           <Link className="projects-link" to="/projects/hangman">Hangman</Link>
         </div>
-        <div className="project-section">
+        {/* <div className="project-section">
           <h2>Reference:</h2>
           <Link className="projects-link" to="/projects/html">HTML</Link>
           <Link className="projects-link" to="/projects/css">CSS</Link>    
-        </div> 
+        </div>  */}
         </div>
        }
     </>
