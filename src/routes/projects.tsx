@@ -11,7 +11,7 @@ function ProjectsComponent() {
   
   return (
     <>
-      {location != './projects' ? <Outlet /> :
+      {location != '/projects' ? <Outlet /> :
       <div className="projects"> 
         <div className="project-section">
           <h2>Games:</h2>
