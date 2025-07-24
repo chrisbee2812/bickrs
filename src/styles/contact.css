@@ -32,6 +32,13 @@
     margin-top: 1em;
 }
 
+.result-para {
+    font-size: 2rem;
+    margin-top: 1em;
+    color: #c05300;
+    font-weight: bold;
+}
+
 input, textarea {
     border: 1px solid #c05300;
     border-radius: 5px;
