@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestRouteImport } from './routes/test'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -18,6 +19,11 @@ import { Route as ProjectsHtmlRouteImport } from './routes/projects/html'
 import { Route as ProjectsHangmanRouteImport } from './routes/projects/hangman'
 import { Route as ProjectsCssRouteImport } from './routes/projects/css'
 
+const TestRoute = TestRouteImport.update({
+  id: '/test',
+  path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
+  '/test': typeof TestRoute
   '/projects/css': typeof ProjectsCssRoute
   '/projects/hangman': typeof ProjectsHangmanRoute
   '/projects/html': typeof ProjectsHtmlRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
+  '/test': typeof TestRoute
   '/projects/css': typeof ProjectsCssRoute
   '/projects/hangman': typeof ProjectsHangmanRoute
   '/projects/html': typeof ProjectsHtmlRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
+  '/test': typeof TestRoute
   '/projects/css': typeof ProjectsCssRoute
   '/projects/hangman': typeof ProjectsHangmanRoute
   '/projects/html': typeof ProjectsHtmlRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/projects'
+    | '/test'
     | '/projects/css'
     | '/projects/hangman'
     | '/projects/html'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/projects'
+    | '/test'
     | '/projects/css'
     | '/projects/hangman'
     | '/projects/html'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/projects'
+    | '/test'
     | '/projects/css'
     | '/projects/hangman'
     | '/projects/html'
@@ -128,10 +140,18 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRouteWithChildren
+  TestRoute: typeof TestRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/test': {
+      id: '/test'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -214,6 +234,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRouteWithChildren,
+  TestRoute: TestRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
