@@ -18,6 +18,7 @@ import { Route as ProjectsTictactoeRouteImport } from './routes/projects/tictact
 import { Route as ProjectsHtmlRouteImport } from './routes/projects/html'
 import { Route as ProjectsHangmanRouteImport } from './routes/projects/hangman'
 import { Route as ProjectsCssRouteImport } from './routes/projects/css'
+import { Route as ProjectsCalculatorRouteImport } from './routes/projects/calculator'
 
 const TestRoute = TestRouteImport.update({
   id: '/test',
@@ -64,6 +65,11 @@ const ProjectsCssRoute = ProjectsCssRouteImport.update({
   path: '/css',
   getParentRoute: () => ProjectsRoute,
 } as any)
+const ProjectsCalculatorRoute = ProjectsCalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => ProjectsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/test': typeof TestRoute
+  '/projects/calculator': typeof ProjectsCalculatorRoute
   '/projects/css': typeof ProjectsCssRoute
   '/projects/hangman': typeof ProjectsHangmanRoute
   '/projects/html': typeof ProjectsHtmlRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/test': typeof TestRoute
+  '/projects/calculator': typeof ProjectsCalculatorRoute
   '/projects/css': typeof ProjectsCssRoute
   '/projects/hangman': typeof ProjectsHangmanRoute
   '/projects/html': typeof ProjectsHtmlRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/test': typeof TestRoute
+  '/projects/calculator': typeof ProjectsCalculatorRoute
   '/projects/css': typeof ProjectsCssRoute
   '/projects/hangman': typeof ProjectsHangmanRoute
   '/projects/html': typeof ProjectsHtmlRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects'
     | '/test'
+    | '/projects/calculator'
     | '/projects/css'
     | '/projects/hangman'
     | '/projects/html'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects'
     | '/test'
+    | '/projects/calculator'
     | '/projects/css'
     | '/projects/hangman'
     | '/projects/html'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects'
     | '/test'
+    | '/projects/calculator'
     | '/projects/css'
     | '/projects/hangman'
     | '/projects/html'
@@ -208,10 +220,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsCssRouteImport
       parentRoute: typeof ProjectsRoute
     }
+    '/projects/calculator': {
+      id: '/projects/calculator'
+      path: '/calculator'
+      fullPath: '/projects/calculator'
+      preLoaderRoute: typeof ProjectsCalculatorRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
   }
 }
 
 interface ProjectsRouteChildren {
+  ProjectsCalculatorRoute: typeof ProjectsCalculatorRoute
   ProjectsCssRoute: typeof ProjectsCssRoute
   ProjectsHangmanRoute: typeof ProjectsHangmanRoute
   ProjectsHtmlRoute: typeof ProjectsHtmlRoute
@@ -219,6 +239,7 @@ interface ProjectsRouteChildren {
 }
 
 const ProjectsRouteChildren: ProjectsRouteChildren = {
+  ProjectsCalculatorRoute: ProjectsCalculatorRoute,
   ProjectsCssRoute: ProjectsCssRoute,
   ProjectsHangmanRoute: ProjectsHangmanRoute,
   ProjectsHtmlRoute: ProjectsHtmlRoute,

@@ -1,0 +1,35 @@
+.calculator {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 7em auto 0;
+}
+
+.display {
+    height: 3em;
+    margin: 3em 0;
+    width: 40%;
+    text-align: right;
+}
+
+.calc-keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.key-pad {
+    width: 4em;
+    height: 3em;
+    border: 1px solid #444;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key-pad:hover {
+    cursor: pointer;
+}
